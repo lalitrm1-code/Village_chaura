@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Stylish Report with Popup</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #e6f7ff);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    th {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #e0f7fa;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      border-radius: 12px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+      width: 60%;
+      max-height: 80%;
+      overflow-y: auto;
+      animation: fadeIn 0.3s forwards;
+    }
+
+    .popup h3 {
+      margin-top: 0;
+      color: #4CAF50;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .popup table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .popup th {
+      background: #4CAF50;
+      color: white;
+      padding: 10px;
+    }
+
+    .popup td, .popup th {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+
+    button {
+      display: block;
+      margin: 15px auto 0;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #45a049, #388e3c);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      table { width: 95%; }
+      .popup { width: 90%; }
+    }
+    
+    /* Main table row colors */
+#mainTable tr:nth-child(odd) {
+  background-color: #ffffff; /* white */
+}
+
+#mainTable tr:nth-child(even) {
+  background-color: #f0f8ff; /* very light blue */
+}
+
+/* Popup detail table row colors */
+.popup table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.popup table tr:nth-child(even) {
+  background-color: #e3f2fd; /* soft sky blue */
+}
+
+/* Header and button colors */
+th {
+  background: linear-gradient(135deg, #2196F3, #1976D2); /* blue gradient */
+  color: white;
+}
+
+.popup th {
+  background: #2196F3;
+  color: white;
+}
+
+button {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #1976D2, #0D47A1);
+}
+.report-banner {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .report-banner img {
+    width: auto;          /* keep natural width */
+    max-width: 100%;      /* never overflow container */
+    height: auto;         /* maintain aspect ratio */
+    max-height: 200px;    /* default max height for large screens */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Tablet screens */
+  @media (max-width: 768px) {
+    .report-banner img {
+      max-height: 150px;
+    }
+  }
+
+  /* Mobile screens */
+  @media (max-width: 480px) {
+    .report-banner img {
+      max-height: 100px;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+<div class="report-banner">
+  <img src="IMG_20160218_164730.jpg" alt="Report Banner">
+</div>
+<h2>Employee Report</h2>
+<table id="mainTable">
+  <tr><th>ID</th><th>Name</th><th>Department</th></tr>
+  <tr data-id="1"><td>1</td><td>Alice</td><td>HR</td></tr>
+  <tr data-id="2"><td>2</td><td>Bob</td><td>Finance</td></tr>
+  <tr data-id="3"><td>3</td><td>Charlie</td><td>IT</td></tr>
+</table>
+
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+  <h3>Employee Details</h3>
+  <div id="popupContent"></div>
+  <button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+  // JSON dataset
+  const employeeDetails = {
+    "1": [
+      { Project: "Recruitment Drive", Status: "Completed" },
+      { Project: "Policy Update", Status: "In Progress" }
+    ],
+    "2": [
+      { Report: "Annual Budget", "Due Date": "30-Apr-2026" },
+      { Report: "Tax Filing", "Due Date": "15-May-2026" }
+    ],
+    "3": [
+      { System: "Server Upgrade", Status: "Pending" },
+      { System: "Network Audit", Status: "Completed" }
+    ]
+  };
+
+  const rows = document.querySelectorAll("#mainTable tr");
+  rows.forEach((row, index) => {
+    if(index === 0) return; // skip header
+    row.addEventListener("click", () => {
+      const id = row.getAttribute("data-id");
+      const details = employeeDetails[id];
+
+      let html = "<table><tr>";
+      Object.keys(details[0]).forEach(key => {
+        html += `<th>${key}</th>`;
+      });
+      html += "</tr>";
+
+      details.forEach(item => {
+        html += "<tr>";
+        Object.values(item).forEach(val => {
+          html += `<td>${val}</td>`;
+        });
+        html += "</tr>";
+      });
+      html += "</table>";
+
+      document.getElementById("popupContent").innerHTML = html;
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("popup").style.display = "block";
+    });
+  });
+
+  function closePopup() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("overlay").addEventListener("click", closePopup);
+</script>
+
+</body>
+</html>
+
+
