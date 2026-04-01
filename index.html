@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Stylish Report with Popup</title>
+  <title>Gram-Chaura Panchyat</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -10,9 +10,9 @@
       padding: 20px;
     }
 
-    h2 {
+    h1 {
       text-align: center;
-      color: #333;
+      color: #ff3300;
       margin-bottom: 20px;
     }
 
@@ -30,14 +30,15 @@
       background: linear-gradient(135deg, #4CAF50, #45a049);
       color: white;
       padding: 12px;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     td {
       padding: 12px;
       text-align: center;
       border-bottom: 1px solid #eee;
-      font-size: 15px;
+      font-size: 19px;
+       font-weight: bold;
     }
 
     tr:nth-child(even) {
@@ -68,7 +69,7 @@
 
     .popup h3 {
       margin-top: 0;
-      color: #4CAF50;
+      
       text-align: center;
       font-size: 20px;
     }
@@ -88,7 +89,7 @@
     .popup td, .popup th {
       border: 1px solid #ddd;
       padding: 10px;
-      text-align: center;
+      text-align: left;
     }
 
     .overlay {
@@ -171,7 +172,7 @@ button:hover {
 
   .report-banner img {
     width: auto;          /* keep natural width */
-          /* never overflow container */
+    max-width: 100%;      /* never overflow container */
     height: auto;         /* maintain aspect ratio */
     max-height: 200px;    /* default max height for large screens */
     border-radius: 8px;
@@ -195,23 +196,31 @@ button:hover {
   </style>
 </head>
 <body>
-
+<h1>श्री हरज्यु देवाय नमः</h1>
 <div class="report-banner">
-  <img src="ll.jpg" alt="Report Banner">
+  <img src="IMG_20150830_165230.jpg" alt="Report Banner">
 </div>
-<h2>Employee Report</h2>
+<h1>ग्राम चौड़ा पंचायत आय व्यय विवरण ः 1 मार्च 2023 से 31 मार्च 2026</h1>
 <table id="mainTable">
-  <tr><th>ID</th><th>Name</th><th>Department</th></tr>
-  <tr data-id="1"><td>1</td><td>Alice</td><td>HR</td></tr>
-  <tr data-id="2"><td>2</td><td>Bob</td><td>Finance</td></tr>
-  <tr data-id="3"><td>3</td><td>Charlie</td><td>IT</td></tr>
+  <tr><th>क्रम संख्या</th><th>दिनांक</th><th>जमा राशि</th></tr>
+  <tr data-id="1"><td>1</td><td>मार्च 2023</td><td>3200</td></tr>
+  <tr data-id="2"><td>2</td><td>जून 2023</td><td>2500</td></tr>
+  <tr data-id="3"><td>3</td><td>7/3/2024</td><td>1150</td></tr>
+
+  <tr data-id="4"><td>4</td><td>28/3/2024</td><td>1500</td></tr>
+  <tr data-id="5"><td>5</td><td>1/7/2014</td><td>7840</td></tr>
+  <tr data-id="6"><td>6</td><td>18/3/2025</td><td>5985</td></tr>
+
+  <tr data-id="7"><td>7</td><td>3/7/2025</td><td>2550</td></tr>
+  <tr data-id="8"><td>8</td><td>24/12/2025</td><td>2350</td></tr>
+
 </table>
 
 <div class="overlay" id="overlay"></div>
 <div class="popup" id="popup">
-  <h3>Employee Details</h3>
+  <h3>पूर्ण विवरण</h3>
   <div id="popupContent"></div>
-  <button onclick="closePopup()">Close</button>
+  <button onclick="closePopup()">बंद करें</button>
 </div>
 
 <script>
@@ -226,8 +235,13 @@ button:hover {
       { Report: "Tax Filing", "Due Date": "15-May-2026" }
     ],
     "3": [
-      { System: "Server Upgrade", Status: "Pending" },
-      { System: "Network Audit", Status: "Completed" }
+      { Detail: "नवंबर 2023-मनोज राम के घर टिन", Amount: "50" },
+      { Detail: "दिसंबर 2023-गुसाईं राम के घर लड़की की शादी", Amount: "150" },
+      { Detail: "दिसंबर 2023-गुसाईं राम के घर लड़के की शादी", Amount: "150" },
+      { Detail: "फरवरी 2024- खुशी की शादी चौस्यारी", Amount: "500" },
+      { Detail: "मार्च 2024- साक्षी की शादी सिलखोला", Amount: "300" }
+      
+     
     ]
   };
 
@@ -244,13 +258,27 @@ button:hover {
       });
       html += "</tr>";
 
+      let sum = 0;
+
       details.forEach(item => {
+     
         html += "<tr>";
+         let colIndex = 0;
         Object.values(item).forEach(val => {
           html += `<td>${val}</td>`;
+
+          if (colIndex === 1 && !isNaN(val)) {
+        sum += parseFloat(val);
+      }
+      colIndex++;
         });
         html += "</tr>";
       });
+
+       html += `<tr style="font-weight:bold; background:#f0f8ff; color:#0040ff">
+             <td colspan="1">कुल योग</td>
+             <td>${sum}</td>
+           </tr>`;
       html += "</table>";
 
       document.getElementById("popupContent").innerHTML = html;
@@ -269,5 +297,3 @@ button:hover {
 
 </body>
 </html>
-
-
