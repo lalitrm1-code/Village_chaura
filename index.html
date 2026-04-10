@@ -549,6 +549,7 @@ button:hover {
       document.getElementById("popupContent").innerHTML = html2;
       document.getElementById("overlay").style.display = "block";
       document.getElementById("popup").style.display = "block";
+       history.pushState({isOverlayOpen:true},"overlay");
     });
   });
 
