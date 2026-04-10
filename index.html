@@ -112,6 +112,7 @@
       cursor: pointer;
       font-size: 17px;
       transition: background 0.3s ease;
+      font-weight: bold;
     }
     button:hover {
       background: linear-gradient(135deg, #45a049, #388e3c);
@@ -134,7 +135,7 @@
 }
 
 #mainTable tr:nth-child(even) {
-  background-color: #f0f8ff; /* very light blue */
+  background-color: #ccddff; /* very light blue */
 }
 
 #Table1 tr:nth-child(odd) {
@@ -142,7 +143,7 @@
 }
 
 #Table1 tr:nth-child(even) {
-  background-color: #f0f8ff; /* very light blue */
+  background-color: #ccddff; /* very light blue */
 }
 /* Popup detail table row colors */
 .popup table tr:nth-child(odd) {
@@ -150,7 +151,7 @@
 }
 
 .popup table tr:nth-child(even) {
-  background-color: #e3f2fd; /* soft sky blue */
+  background-color: #ffff80; /* soft sky blue */
 }
 
 /* Header and button colors */
@@ -167,6 +168,7 @@ th {
 button {
   background: linear-gradient(135deg, #2196F3, #1976D2);
   color: white;
+ 
 }
 
 button:hover {
@@ -212,7 +214,7 @@ button:hover {
 
   .styled-paragraph p {
     font-family: "Poppins", Arial, sans-serif;
-    font-size: 20px;
+    font-size: 21px;
        font-weight: bold;
     line-height: 1.6;
     color: #333;
@@ -222,7 +224,8 @@ button:hover {
   /* Highlight styles */
   .highlight {
     font-weight: bold;
-    color: #2196F3; /* blue */
+    color: #0a6fc2; /* blue */
+    font-size: 22px;
   }
 
   .important {
@@ -232,7 +235,7 @@ button:hover {
 
   h2 {
       text-align: center;
-      color: #2196F3;
+      color: #0a6fc2;
       margin-bottom: 10px;
     }
   
@@ -243,47 +246,46 @@ button:hover {
 <div class="report-banner">
   <img src="ll.jpg" alt="Report Banner">
 </div>
-<h2>ग्राम चौड़ा पंचायत आय-व्यय विवरण ः 1 मार्च 2023 से 31 मार्च 2026</h2></div>
+<h2>ग्राम पंचायत चौड़ा आय-व्यय विवरण 1 मार्च 2023 से 31 मार्च 2026</h2></div>
 
 <div class="styled-paragraph">
   <p>
   <span class="highlight">1. आय विवरण: </span>
-निम्न सूचि में लिखित जमा राशि ग्राम चौड़ा के पंचायत भवन में उपलब्ध बर्तन इत्यादि सामान द्वारा अर्जित आय है , जो दी गयी तारीखों में ग्राम चौड़ा के बैंक अकाउंट में जमा की गयी है।<br />
- <span class="important">नोटः किसी भी तारीख में जमा की गयी धनराशि का पूर्ण विवरण देखने के लिए उस जमा राशि पर टच करे।</span>
- जिन लोगों के घर शादी में डोली जाती है उनके द्वारा दी गयी धनराशि में से 100 रुपये कम करके लिखे जाते हैं क्योंकि डोली का किराया प्रति व्यक्ति 100 रुपये महिला स्वजल समूह के खाते में जमा किये जाते हैं
-    
+निम्नलिखित जमा राशि ग्राम चौड़ा के पंचायत भवन में उपलब्ध बर्तन इत्यादि सामान द्वारा अर्जित आय है , जो दी गयी तारीखों में ग्राम चौड़ा के बैंक अकाउंट में जमा की गयी है।<br />
+ जिन लोगों के घर शादी में डोली जाती है, उनके द्वारा दिये गये किराये  में से 100 रुपये कम करके लिखे जाते हैं क्योंकि डोली का किराया 100 रुपये महिला स्वजल समूह के खाते में जमा किये जाते हैं।
+    <br />
+    आय के इस विवरण में कहीं-कहीं लोगों ने एकसमान कार्य का अलग-अलग किराया दिया है क्योंकि कई बार उनके घर बर्तन आदि सामान कम मात्रा में जाता है या उनकी आर्थिक स्थिति को ध्यान में रखा जाता है।
+ <br /><span class="important">नोटः जमा की गयी धनराशि का पूर्ण विवरण देखने के लिए 'देखें' बटन पर टच करें।</span>
   </p>
 </div>
 
 <table id="mainTable">
-  <tr><th>क्रम संख्या</th><th>दिनांक</th><th>जमा राशि</th></tr>
-  <tr data-id="1"><td style="white-space: nowrap;">1
-  <button>View Details</button>
-</td><td>14/3/2023</td><td>3420</td></tr>
-  <tr data-id="2"><td>2</td><td>26/6/2023</td><td>2500</td></tr>
-  <tr data-id="3"><td>3</td><td>7/3/2024</td><td>1150</td></tr>
-  <tr data-id="4"><td>4</td><td>28/3/2024</td><td>1500</td></tr>
-  <tr data-id="5"><td>5</td><td>19/12/2023</td><td>3750</td></tr>
-  <tr data-id="6"><td>6</td><td>1/7/2014</td><td>7840</td></tr>
-  <tr data-id="7"><td>7</td><td>18/3/2025</td><td>5985</td></tr>
-  <tr data-id="8"><td>8</td><td>3/7/2025</td><td>2550</td></tr>
-  <tr data-id="9"><td>9</td><td>24/12/2025</td><td>2350</td></tr>
-  <tr data-id="10"><td>10</td><td>24/12/2025</td><td>2350</td></tr>
+  <tr><th>क्रम संख्या</th><th>दिनांक</th><th>जमा राशि</th><th>पूर्ण विवरण</th></tr>
+  <tr data-id="1"><td>1</td><td>14/3/2023</td><td>3420</td><td><button>देखें</button></td></tr>
+  <tr data-id="2"><td>2</td><td>26/6/2023</td><td>2500</td><td><button>देखें</button></td></tr>
+  <tr data-id="3"><td>3</td><td>19/12/2023</td><td>3750</td><td><button>देखें</button></td></tr>
+  <tr data-id="4"><td>4</td><td>7/3/2024</td><td>1150</td><td><button>देखें</button></td></tr>
+  <tr data-id="5"><td>5</td><td>28/3/2024</td><td>1500</td><td><button>देखें</button></td></tr>
+  <tr data-id="6"><td>6</td><td>1/7/2024</td><td>7840</td><td><button>देखें</button></td></tr>
+  <tr data-id="7"><td>7</td><td>18/3/2025</td><td>5985</td><td><button>देखें</button></td></tr>
+  <tr data-id="8"><td>8</td><td>3/7/2025</td><td>2550</td><td><button>देखें</button></td></tr>
+  <tr data-id="9"><td>9</td><td>24/12/2025</td><td>2350</td><td><button>देखें</button></td></tr>
+  <tr data-id="10"><td>10</td><td>02/04/2026</td><td>5640</td><td><button>देखें</button></td></tr>
 
 </table>
 <br />
 <div class="styled-paragraph">
   <p>
   <span class="highlight">2. व्यय विवरण: </span>
-निम्न सूचि में लिखित व्यय का विवरण वो विवरण है जो समय-समय पर ग्राम चौड़ा द्वारा चौड़ा के बैंक खाते से निकासी करने के बाद, पंचायत के बर्तन आदि सामान खरीदने के लिए खर्च किया जाता है<span class="important">नोटः किसी भी तारीख में की गयी बैंक निकासी का पूर्ण विवरण देखने के लिए उस राशि पर टच करे।</span>
+निम्न सूची में दी गयी निकासी राशि, व्यय का वह विवरण है जो समय-समय पर ग्राम चौड़ा द्वारा पंचायत के बर्तन आदि सामान खरीदने के लिए खर्च किया जाता है।<br /><span class="important">नोटः व्यय का पूर्ण विवरण देखने के लिए 'देखें' बटन पर टच करें।</span>
      
   </p>
 </div>
 <table id="Table1">
-  <tr><th>क्रम संख्या</th><th>दिनांक</th><th>निकासी  राशि</th></tr>
-  <tr data-id="11"><td>1</td><td>24/2/2023</td><td>10000</td></tr>
-  <tr data-id="12"><td>2</td><td>18/3/2024</td><td>14300</td></tr>
-  <tr data-id="14"><td>3</td><td>16/1/2026</td><td>15000</td></tr>
+  <tr><th>क्रम संख्या</th><th>दिनांक</th><th>निकासी  राशि</th><th>पूर्ण विवरण</th></tr>
+  <tr data-id="11"><td>1</td><td>24/2/2023</td><td>10,000</td><td><button>देखें</button></td></tr>
+  <tr data-id="12"><td>2</td><td>18/3/2024</td><td>14,300</td><td><button>देखें</button></td></tr>
+  <tr data-id="14"><td>3</td><td>16/1/2026</td><td>15,000</td><td><button>देखें</button></td></tr>
   
 </table>
 
@@ -299,36 +301,36 @@ button:hover {
   // JSON dataset
   const employeeDetails = {
     "1": [
-    { Detail: "फरवरी 2023 में बैंक से निकाली गयी रकम से बचत जिसका विवरण व्यय वाले सेक्शन मे है", Amount: "365" },
+    { Detail: "फरवरी 2023 में बैंक से निकाली गयी रकम (10,000) से बचत जिसका विवरण व्यय वाले सेक्शन मे है", Amount: "365" },
       { Detail: "मार्च 2023-होली समारोह के बाद बचत", Amount: "3055" }
       
     ],
     "2": [
-     { Detail: "मई 2023-दीप चन्द्र जोशी गिलगाड़ा जागर इत्यादि", Amount: "2100" },
+     { Detail: "मई 2023-दीप चन्द्र जोशी जी गिलगाड़ा जागर इत्यादि", Amount: "2100" },
       { Detail: "मई 2023-भुवन राम के घर शादी", Amount: "150" },
       { Detail: "मई 2023-दीवान राम के घर शादी", Amount: "150" },
       { Detail: "पटवारी जी के घर जागर", Amount: "250" },
-      { Detail: "प्रकाश जोशी ,तिलागड़ा के घर कथा", Amount: "250" },
+      { Detail: "प्रकाश जोशी जी,तिलागड़ा के घर कथा", Amount: "250" },
       { Detail: "टिन का किराया जगदीश राम", Amount: "50" },
        { Detail: "ड्रम का किराया मनोज राम/सगत राम", Amount: "50" },
       { Detail: "पीयूष तिवारी का जनेउ", Amount: "1500" }
     ],
-    "3": [
+    "4": [
       { Detail: "नवंबर 2023-मनोज राम के घर टिन का किराया", Amount: "50" },
       { Detail: "दिसंबर 2023-गुसाईं राम के घर लड़की की शादी", Amount: "150" },
       { Detail: "दिसंबर 2023-गुसाईं राम के घर लड़के की शादी", Amount: "150" },
       { Detail: "फरवरी 2024- खुशी की शादी चौस्यारी", Amount: "500" },
-      { Detail: "मार्च 2024- साक्षी की शादी सिलखोला", Amount: "300" }
+      { Detail: "मार्च 2024- साक्षी की शादी सिलखोला (अधिकतम टैन्ट का सामान था)", Amount: "300" }
       
     ],
 
-     "4": [
+     "5": [
     { Detail: "मार्च 2024-होली समारोह के बाद बचत", Amount: "1500" }
         
     ],
 
-     "5": [
-    { Detail: "नोट-यह जमाराशि 3750 मार्च 2023 से पहले की है जिसे श्री शेखरानन्द जोशी देखते थे और यह उनके द्वारा ही 19-12-2023 को बैंक में जमा कराया गया", Amount: "3750" }
+     "3": [
+    { Detail: "नोट-यह जमाराशि 3750 मार्च 2023 से पहले की है जिसे श्री शेखरानन्द जोशी जी देखते थे और यह उनके द्वारा ही 19-12-2023 को बैंक में जमा कराया गया", Amount: "3750" }
         
     ],
 
@@ -337,9 +339,9 @@ button:hover {
     { Detail: "अप्रेल 2024- गिलगाड़ राजू दा के घर जागर", Amount: "500" },
     { Detail: "अप्रेल 2024- रेनू की शादी", Amount: "1000" },
     { Detail: "मई 2024- डिगरा हेम दा को गैस चूल्हा दिया ", Amount: "150" },
-    { Detail: "मई 2024- सन्तोष जोशी के घर कथा ", Amount: "1000" },
+    { Detail: "मई 2024- सन्तोष जोशी जी के घर कथा ", Amount: "1000" },
     { Detail: "जून 2024- पारखोला भागवत कथा ", Amount: "1000" },
-    { Detail: "जून 2024- प्रमोद जोशी,हरीश जोशी, मंदिर प्रतिष्ठा ", Amount: "1000" },
+    { Detail: "जून 2024- प्रमोद जोशी जी,हरीश जोशी मलखोला, मंदिर प्रतिष्ठा ", Amount: "1000" },
     { Detail: "जून 2024- गिलगाड़ स्व. पटवारी जी के घर जागर", Amount: "1000" },
     { Detail: "जून 2024- पटवारी जी के घर एक गिलास खोने पर उनके परिजनों द्वारा भरपाई", Amount: "70" },
     { Detail: "जून 2024- पारखोला गुडु दा के घर जागर ", Amount: "1000" },
@@ -349,8 +351,8 @@ button:hover {
     ],
 
      "7": [
-   { Detail: "सितंबर 2024- गिलगाड़ राजू को 10 थाली", Amount: "101" },
-   { Detail: "अक्टूबर 2024- चौस्यारी स्व. हरीश जोशी जी का पीपलपानी, कम बर्तन गये", Amount: "500" },
+   { Detail: "सितंबर 2024- गिलगाड़ राजू दा को 10 थाली", Amount: "101" },
+   { Detail: "अक्टूबर 2024- चौस्यारी स्व. हरीश जोशी जी का पीपलपानी", Amount: "500" },
    { Detail: "नवंबर 2024- नाखोला विनोद जोशी जी की पत्नी का पीपलपानी", Amount: "100" },
    { Detail: "जनवरी 2025- नाकोट उमेश लोहनी जी द्वारा गोलज्यु मंदिर में पूजा", Amount: "500" },
    { Detail: "जनवरी 2025- प्रीती की शादी", Amount: "1000" },
@@ -361,12 +363,12 @@ button:hover {
     ],
 
      "8": [
-      { Detail: "मई 2025- गोपाल राम के घर टिन गये", Amount: "100" },
-      { Detail: "मई 2025- पूरन राम/मोहन राम टिन गये", Amount: "100" },
-      { Detail: "मई 2025- शंकर राम/नारायण राम टिन गये", Amount: "100" },
+      { Detail: "मई 2025- गोपाल राम , टिन का किराया", Amount: "100" },
+      { Detail: "मई 2025- पूरन राम/मोहन राम ,टिन का किराया", Amount: "100" },
+      { Detail: "मई 2025- शंकर राम/नारायण राम, टिन का किराया", Amount: "100" },
       { Detail: "मई 2025- महेश राम, लड़के की शादी,दरी,टिन", Amount: "150" },
       { Detail: "मई 2025- तिलागाड़ सोनु की शादी", Amount: "1900" },
-      { Detail: "तिलागाड़ प्रकाश चन्द्र जोशी, 1 ड्रम", Amount: "200" }
+      { Detail: "तिलागाड़ प्रकाश चन्द्र जोशी जी, 1 ड्रम", Amount: "200" }
       
     ],
 
@@ -374,17 +376,17 @@ button:hover {
     { Detail: "राजेन्द्र राम, लड़के की शादी,भुगतान में विलम्ब", Amount: "100" },
      { Detail: "अक्टूबर 2025- चौस्यारी स्व. हरीश जोशी जी की बरसी ", Amount: "1000" },
       { Detail: "अक्टूबर 2025- नाखोला विनोद जोशी जी की पत्नी की बरसी ", Amount: "500" },
-       { Detail: "नवंबर 2025- सिलखोला निधि की शादी, कम बर्तन गये", Amount: "500" },
+       { Detail: "नवंबर 2025- सिलखोला निधि की शादी", Amount: "500" },
         { Detail: "दिसंबर 2025- स्व. खीम राम की लड़की की शादी", Amount: "250" }
         
     ],
 
     "10": [
-    { Detail: "जनवरी 2026- गोलथान में डिगरा वालों की पूजा में बर्तन", Amount: "1000" },
+    { Detail: "जनवरी 2026- गोलथान में डिगरा वालों की पूजा", Amount: "1000" },
      { Detail: "फरवरी 2026- डब्बू जी के घर कथा, 10 थाली", Amount: "100" },
-      { Detail: "फरवरी 2026- बैंक निकासी के बाद, सामान खरीदने के बाद बचत, इस निकासी का विवरण व्यय वाले सेक्शन में दिया है", Amount: "1300" },
+      { Detail: "फरवरी 2026- बैंक निकासी (15,000) के बाद बचत, इस निकासी का विवरण व्यय वाले सेक्शन में दिया है", Amount: "1300" },
        { Detail: "फरवरी 2026- नमन की आमा की बरसी", Amount: "1000" },
-        { Detail: "फरवरी 2026- पारखोला बंटू की बहन की शादी", Amount: "1000" },
+        { Detail: "फरवरी 2026- पारखोला ममता की शादी", Amount: "1000" },
         { Detail: "मार्च 2026- होली समारोह के बाद बचत", Amount: "1000" },
         { Detail: "मार्च 2026- मनोजी की ईजा का पीपलपानी", Amount: "100" },
         { Detail: "पारखोला बंटू के घर उनके बहन की शादी में 1 गिलास खोया ", Amount: "70" },
@@ -427,7 +429,7 @@ button:hover {
               
       });
 
-       html += `<tr style="font-weight:bold; background:#f0f8ff; color:#0040ff">
+       html += `<tr style="font-weight:bold; background:#f0f8ff; color:#ff0000">
              <td colspan="1">कुल योग</td>
              <td>${sum}</td>
            </tr>`;
@@ -435,7 +437,7 @@ button:hover {
                if(row.getAttribute("data-id")==2)
             {
           
-            html += "<tr><td colspan=2>कुल जमा राशि 4500 से 2000 रुपये  निकाल कर बचे 2500 रुपये बैंक में जमा किये क्योंकि अप्रेल 2023 में हरज्यु मंदिर प्रतिष्ठा के दौरान 2000 रुपये कम पड़ रहे थे उस समय उसकी पूर्ति स्वयं द्वारा करने के बाद जून 2023 में ये 4500 से 2000 रुपये  निकाल कर बचे 2500 रुपये बैंक में जमा किये। <a href='Harjyu.pdf' target='_blank'>मंदिर प्रतिष्ठा की Pdf देखें</a></td></tr>";
+            html += "<tr><td colspan=2>कुल जमा राशि 4500 से 2000 रुपये  निकाल कर बचे 2500 रुपये बैंक में जमा किये क्योंकि अप्रेल 2023 में हरज्यु मंदिर प्रतिष्ठा, भण्डारा के दौरान 2000 रुपये कम पड़ रहे थे उस समय उसकी पूर्ति स्वयं द्वारा करने के बाद जून 2023 में इस लिस्ट में अर्जित आय 4500 से 2000 रुपये  निकाल कर बचे 2500 रुपये बैंक में जमा किये। <a href='Harjyu.pdf' target='_blank'>मंदिर प्रतिष्ठा की Pdf देखें</a></td></tr>";
             }
                if(row.getAttribute("data-id")==4)
             {
@@ -449,8 +451,14 @@ button:hover {
       document.getElementById("popupContent").innerHTML = html;
       document.getElementById("overlay").style.display = "block";
       document.getElementById("popup").style.display = "block";
+      history.pushState({isOverlayOpen:true},"overlay");
     });
   });
+
+  window.onpopstate=function(event){
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("popup").style.display = "none";
+  };
 
   //--------------------table 2
 
@@ -472,8 +480,8 @@ button:hover {
 
     "14": [
     { Detail: "जनवरी 2026- 1 छोटी कढ़ाई 8 किलो की", Amount: "1800" },
-    { Detail: "जनवरी 2026- दो टब स्टील में प्रति टब 1500 रुपये", Amount: "3000" },
-    { Detail: "जनवरी 2026- दो जग प्रति जग 200 रुपये", Amount: "400" },
+    { Detail: "जनवरी 2026- दो टब स्टील में प्रति टब मूल्य 1500 रुपये", Amount: "3000" },
+    { Detail: "जनवरी 2026- दो जग प्रति जग मूल्य 200 रुपये", Amount: "400" },
     { Detail: "जनवरी 2026- एक छोटा झांझर(छलनी)", Amount: "100" },
     { Detail: "जनवरी 2026- होली 2026 के लिए नया झांझ", Amount: "5600" },
     { Detail: "जनवरी 2026- भजन कीर्तन के लिए 1 लोहे का चिमटा", Amount: "600" },
@@ -519,7 +527,7 @@ button:hover {
               
       });
 
-       html2 += `<tr style="font-weight:bold; background:#f0f8ff; color:#0040ff">
+       html2 += `<tr style="font-weight:bold; background:#f0f8ff; color:#ff0000">
              <td colspan="1">कुल योग</td>
              <td>${sum2}</td>
            </tr>`;
@@ -549,6 +557,9 @@ button:hover {
   function closePopup() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("popup").style.display = "none";
+    if(history.state && history.state.isOverlayOpen){
+    history.back();
+    }
   }
 
   document.getElementById("overlay").addEventListener("click", closePopup);
