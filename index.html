@@ -151,7 +151,7 @@
 }
 
 .popup table tr:nth-child(even) {
-  background-color: #ffff80; /* soft sky blue */
+  background-color: #ccddff; /* soft sky blue */
 }
 
 /* Header and button colors */
@@ -161,7 +161,7 @@ th {
 }
 
 .popup th {
-  background: #ffad33;
+  background: #33adff;
   color: black;
 }
 
@@ -549,7 +549,8 @@ button:hover {
       document.getElementById("popupContent").innerHTML = html2;
       document.getElementById("overlay").style.display = "block";
       document.getElementById("popup").style.display = "block";
-       history.pushState({isOverlayOpen:true},"overlay");
+
+      history.pushState({isOverlayOpen:true},"overlay");
     });
   });
 
